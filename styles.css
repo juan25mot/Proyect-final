@@ -1,0 +1,60 @@
+/* Contenedor principal */
+.background-tokyo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Imagen de Tokio */
+.background-tokyo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradiente arriba para resaltar pétalos y abajo para legibilidad */
+  background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), 
+    url('Fondo_tokio.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Estilo de los pétalos */
+.petal {
+  position: absolute;
+  top: -10%;
+  background-color: #ff7893;
+  border-radius: 150% 0 150% 0;
+  width: 15px;
+  height: 20px;
+  z-index: 2;
+  /* Sombra para que resalten sobre el fondo oscuro */
+  animation: fall linear infinite;
+}
+
+/* Patrón cíclico: repite cada 10 pétalos para más variedad */
+.petal:nth-child(10n+1) { left: 5%; animation-duration: 5s; animation-delay: 0s; }
+.petal:nth-child(10n+2) { left: 15%; animation-duration: 8s; animation-delay: 1s; width: 10px; }
+.petal:nth-child(10n+3) { left: 25%; animation-duration: 6s; animation-delay: 2s; }
+.petal:nth-child(10n+4) { left: 35%; animation-duration: 10s; animation-delay: 0.5s; width: 12px; }
+.petal:nth-child(10n+5) { left: 45%; animation-duration: 7s; animation-delay: 3s; }
+.petal:nth-child(10n+6) { left: 55%; animation-duration: 9s; animation-delay: 1.5s; width: 18px; }
+.petal:nth-child(10n+7) { left: 65%; animation-duration: 4s; animation-delay: 4s; }
+.petal:nth-child(10n+8) { left: 75%; animation-duration: 12s; animation-delay: 2.5s; width: 14px; }
+.petal:nth-child(10n+9) { left: 85%; animation-duration: 4s; animation-delay: 1s; }
+.petal:nth-child(10n+10) { left: 95%; animation-duration: 11s; animation-delay: 3.5s; width: 16px; }
+
+
+/* Animación de caída y balanceo */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(100px);
+    opacity: 0;
+  }
+}
