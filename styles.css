@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
-  background:#f5f3f8;
+  background: #f5f3f8;
 }
 
 /* Contenedor principal */
@@ -13,19 +13,20 @@ body {
   width: 100%;
   height: 100vh;
   margin: 20px;
-  border-radius: 28px;
+  border-radius: 28px 20px 20px 28px;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   background: rgb(255, 219, 219);
-  box-shadow:0 10px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   top: 0;
   left: 0;
   /* Gradiente arriba para resaltar pétalos y abajo para legibilidad */
-  background-image: 
-    linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), 
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%),
     url('Fondo_tokio.png');
   background-size: cover;
   background-position: center;
+  clip-path: ellipse(150% 90% at 50% 0%);
 }
 
 /* Estilo de los pétalos */
@@ -42,16 +43,70 @@ body {
 }
 
 /* Patrón cíclico: repite cada 10 pétalos para más variedad */
-.petal:nth-child(10n+1) { left: 5%; animation-duration: 5s; animation-delay: 0s; }
-.petal:nth-child(10n+2) { left: 15%; animation-duration: 8s; animation-delay: 1s; width: 10px; }
-.petal:nth-child(10n+3) { left: 25%; animation-duration: 6s; animation-delay: 2s; }
-.petal:nth-child(10n+4) { left: 35%; animation-duration: 10s; animation-delay: 0.5s; width: 12px; }
-.petal:nth-child(10n+5) { left: 45%; animation-duration: 7s; animation-delay: 3s; }
-.petal:nth-child(10n+6) { left: 55%; animation-duration: 9s; animation-delay: 1.5s; width: 18px; }
-.petal:nth-child(10n+7) { left: 65%; animation-duration: 4s; animation-delay: 4s; }
-.petal:nth-child(10n+8) { left: 75%; animation-duration: 12s; animation-delay: 2.5s; width: 14px; }
-.petal:nth-child(10n+9) { left: 85%; animation-duration: 4s; animation-delay: 1s; }
-.petal:nth-child(10n+10) { left: 95%; animation-duration: 11s; animation-delay: 3.5s; width: 16px; }
+.petal:nth-child(10n+1) {
+  left: 5%;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+
+.petal:nth-child(10n+2) {
+  left: 15%;
+  animation-duration: 8s;
+  animation-delay: 1s;
+  width: 10px;
+}
+
+.petal:nth-child(10n+3) {
+  left: 25%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.petal:nth-child(10n+4) {
+  left: 35%;
+  animation-duration: 10s;
+  animation-delay: 0.5s;
+  width: 12px;
+}
+
+.petal:nth-child(10n+5) {
+  left: 45%;
+  animation-duration: 7s;
+  animation-delay: 3s;
+}
+
+.petal:nth-child(10n+6) {
+  left: 55%;
+  animation-duration: 9s;
+  animation-delay: 1.5s;
+  width: 18px;
+}
+
+.petal:nth-child(10n+7) {
+  left: 65%;
+  animation-duration: 4s;
+  animation-delay: 4s;
+}
+
+.petal:nth-child(10n+8) {
+  left: 75%;
+  animation-duration: 12s;
+  animation-delay: 2.5s;
+  width: 14px;
+}
+
+.petal:nth-child(10n+9) {
+  left: 85%;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.petal:nth-child(10n+10) {
+  left: 95%;
+  animation-duration: 11s;
+  animation-delay: 3.5s;
+  width: 16px;
+}
 
 
 /* Animación de caída y balanceo */
@@ -60,6 +115,7 @@ body {
     transform: translateY(0) rotate(0deg) translateX(0);
     opacity: 1;
   }
+
   100% {
     transform: translateY(110vh) rotate(720deg) translateX(100px);
     opacity: 0;
@@ -68,86 +124,84 @@ body {
 
 /* contenedor del menu */
 .menu_pricipal {
-  display:flex;
+  display: flex;
   width: fill-content;
   margin: 20px;
   border-radius: 28px;
-  align-items:center;
-  justify-content:space-between;
-  padding:1px 40px;
-  background:rgba(255,255,255,0.75);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,0,0,0.05);
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 40px;
+  background: rgba(255, 253, 253, 0.358);
+  backdrop-filter: blur(3px);
+  border-bottom: 1px solid rgba(241, 241, 241, 0.348);
   box-shadow:
-    0 4px 20px rgba(0,0,0,0.04);
+    0 4px 20px rgba(241, 241, 241, 0.348);
 }
 
 /* logo del menu */
 
-.logo{
-  display:flex;
-  align-items:center;
+.logo {
+  display: flex;
+  align-items: center;
   width: 200px;
-  gap:10px;
-  color:#2d1457;
+  gap: 10px;
+  color: #130133;
 }
 
-.logo h2{
-  font-size:32px;
-  font-weight:700;
+.logo h2 {
+  font-size: 32px;
+  font-weight: 700;
 }
 
-.logo-icon{
+.logo-icon {
   width: auto;
   height: auto;
 }
 
 /* palabras del menu */
-.nav-links{
-  display:flex;
-  gap:40px;
+.nav-links {
+  display: flex;
+  gap: 40px;
 
-  list-style:none;
+  list-style: none;
 }
 
-.nav-links a{
-  text-decoration:none;
-  color:#2d1457;
-  font-size:22px;
-  font-weight:600;
-  transition:0.3s ease;
+.nav-links a {
+  text-decoration: none;
+  color: #130133;
+  font-size: 22px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.nav-links a:hover{
-  color:#9333ea;
+.nav-links a:hover {
+  color: #8c00ff;
 }
 
 /* boton de iniciar sesion */
-.login-btn{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  border:none;
-  padding:12px 22px;
-  border-radius:14px;
-  background:linear-gradient(
-    135deg,
-    #9333ea,
-    #7e22ce
-  );
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,
+      #9333ea,
+      #6209af);
 
-  color:white;
-  font-size:18px;
-  font-weight:500;
-  cursor:pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
   box-shadow:
-    0 8px 20px rgba(147,51,234,0.25);
-  transition:0.3s ease;
+    0 8px 20px rgba(147, 51, 234, 0.25);
+  transition: 0.3s ease;
 }
 
-.login-btn:hover{
-  transform:translateY(-2px);
+.login-btn:hover {
+  transform: translateY(-2px);
 
   box-shadow:
-    0 12px 24px rgba(147,51,234,0.35);
+    0 12px 24px rgba(64, 1, 123, 0.738);
 }
