@@ -45,13 +45,13 @@ body {
     border-radius: 28px;
     align-items: center;
     justify-content: space-between;
-    padding: 1px 40px;
+    padding: 12px 40px;
     background: rgba(255, 253, 253, 0.358);
     backdrop-filter: blur(10px);
-    margin-bottom: 60px;
     border-bottom: 1px solid rgba(241, 241, 241, 0.348);
     box-shadow:
         0 4px 20px rgba(241, 241, 241, 0.348);
+    box-sizing: border-box;
 }
 
 /* logo del menu */
@@ -80,6 +80,7 @@ body {
     display: flex;
     gap: 30px;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -133,6 +134,7 @@ body {
     padding: 0 60px;
     box-sizing: border-box;
     font-family: sans-serif;
+    gap: 20px;
 }
 
 .encabezado-titulo {
@@ -225,6 +227,7 @@ body {
     transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
     position: relative;
     overflow: hidden;
+    min-height: 260px;
 }
 
 .d1 {
@@ -250,82 +253,292 @@ body {
 
 /* Bloque contenedor inferior (Textos + Duración) */
 .destin-info-block {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 35px 20px; /* Colchón interno */
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between; /* Empuja textos a la izquierda y píldora a la derecha */
-  align-items: flex-end;         /* Alinea ambos elementos en la base inferior */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
 }
 
 /* Zona de textos */
 .destin-textos {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .destin-titulo {
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 0.5px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .destin-rutas {
-  color: rgba(255, 255, 255, 0.8); /* Blanco suavizado */
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* Píldora de duración ("# días") */
 .destin-duracion {
-  background: rgba(255, 255, 255, 0.15); /* Cristal traslúcido oscuro */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 6px 16px;
-  border-radius: 50px;
-  flex-shrink: 0;
-  white-space: nowrap;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 50px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .destin-duracion:hover {
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.418); /* Opcional: brilla un poco más al pasar el mouse */
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.418);
 }
 
 .destin-duracion span {
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: 600;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 /*---------------------------FOOTER---------------------------*/
 .kizuna-footer {
-  width: 100%;
-  max-width: 1750px;
-  margin: auto auto 0 auto;
-  box-sizing: border-box;
-  padding: 0 10px;
+    width: 100%;
+    max-width: 1750px;
+    margin: auto auto 0 auto;
+    box-sizing: border-box;
+    padding: 0 10px;
 }
 
 .footer-contenido p {
-  color: white;                       
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin: 0;
-  text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-align: center;
+}
+
+/* ========================= */
+/* RESPONSIVE TABLET */
+/* ========================= */
+
+@media (max-width: 1024px) {
+
+    body {
+        margin: 10px;
+    }
+
+    .hero-contenedor {
+        padding: 5px 30px 0 30px;
+    }
+
+    .menu_pricipal {
+        gap: 20px;
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .logo h2 {
+        font-size: 26px;
+    }
+
+    .gallery-dest {
+        height: 420px;
+        padding: 0 30px;
+    }
+
+    .seccion-encabezado {
+        padding: 0 30px;
+    }
+
+    .destin-titulo {
+        font-size: 24px;
+    }
+
+    .destin-rutas {
+        font-size: 17px;
+    }
+
+    .destin-duracion span {
+        font-size: 17px;
+    }
+}
+
+/* ========================= */
+/* RESPONSIVE MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .hero-contenedor {
+        padding: 0;
+    }
+
+    .background-tokyo {
+        border-radius: 20px;
+        padding: 16px;
+    }
+
+    .menu_pricipal {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+    }
+
+    .login-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .seccion-encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .encabezado-titulo h2 {
+        font-size: 20px;
+    }
+
+    .ver-todos-btn {
+        font-size: 17px;
+    }
+
+    .gallery-dest {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+    }
+
+    .destin {
+        width: 100%;
+        min-height: 320px;
+    }
+
+    .destin:hover {
+        flex: 1;
+    }
+
+    .destin-info-block {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .destin-titulo {
+        font-size: 22px;
+    }
+
+    .destin-rutas {
+        font-size: 15px;
+    }
+
+    .destin-duracion span {
+        font-size: 15px;
+    }
+
+    .footer-contenido p {
+        font-size: 16px;
+    }
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        margin: 0;
+    }
+
+    .background-tokyo {
+        border-radius: 0;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .encabezado-titulo {
+        gap: 10px;
+    }
+
+    .burbuja-icono {
+        width: 36px;
+        height: 36px;
+    }
+
+    .star-icon-dest {
+        width: 24px;
+        height: 24px;
+    }
+
+    .destin-info-block {
+        padding: 25px 16px;
+    }
+
+    .destin-titulo {
+        font-size: 20px;
+    }
+
+    .destin-rutas {
+        font-size: 14px;
+    }
+
+    .destin-duracion {
+        padding: 5px 12px;
+    }
+
+    .destin-duracion span {
+        font-size: 14px;
+    }
 }

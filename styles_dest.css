@@ -6,7 +6,6 @@ body {
 
 .hero-contenedor {
     display: flex;
-    justify-content: column;
     align-items: center;
     flex-direction: column;
     width: 100%;
@@ -25,7 +24,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 28px;
-    padding: 20px 0;
+    padding: 20px;
     background-image:
         linear-gradient(to bottom,
             rgba(0, 0, 0, 0.479),
@@ -44,13 +43,13 @@ body {
     border-radius: 28px;
     align-items: center;
     justify-content: space-between;
-    padding: 1px 40px;
+    padding: 12px 40px;
     background: rgba(255, 253, 253, 0.358);
     backdrop-filter: blur(10px);
-    margin-bottom: 60px;
     border-bottom: 1px solid rgba(241, 241, 241, 0.348);
     box-shadow:
         0 4px 20px rgba(241, 241, 241, 0.348);
+    box-sizing: border-box;
 }
 
 /* logo del menu */
@@ -79,6 +78,7 @@ body {
     display: flex;
     gap: 30px;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -125,7 +125,6 @@ body {
 .seccion-encabezado {
     display: flex;
     justify-content: space-between;
-    /* Empuja el título a la izquierda y el enlace a la derecha */
     align-items: center;
     width: 100%;
     max-width: 1500px;
@@ -133,6 +132,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    gap: 20px;
 }
 
 /* Agrupa la estrella y el texto "Destinos destacados" */
@@ -223,6 +223,7 @@ body {
     transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
     position: relative;
     overflow: hidden;
+    min-height: 250px;
 }
 
 .d1 {
@@ -258,30 +259,23 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 3;
-    /* Se asegura de flotar sobre el filtro gris */
 }
 
 /* El óvalo blanco de "Japón" */
 .simbolo-pais {
     background: rgba(255, 255, 255, 0.9);
-    /* Blanco con un toque sutil de transparencia */
     backdrop-filter: blur(4px);
-    /* Efecto vidrio esmerilado moderno */
     color: #1a1a1a;
-    /* Texto oscuro para contraste */
     padding: 8px 16px;
     border-radius: 50px;
-    /* Esquinas completamente redondeadas en píldora */
     display: flex;
     align-items: center;
     gap: 6px;
-    /* Distancia exacta entre el mapa y el texto */
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .geo-icon {
     width: 25px;
@@ -301,12 +295,9 @@ body {
 
 .heart-icon {
     width: 35px;
-    /* Tamaño del corazón */
     height: 35px;
     color: #f1f4f8;
-    /* Borde gris inicial */
     fill: transparent;
-    /* Fondo transparente inicial */
     transition: transform 0.2s ease, fill 0.2s ease, color 0.2s ease;
 }
 
@@ -316,18 +307,13 @@ body {
 
 .like-checkbox:checked+.like-btn .heart-icon {
     color: white;
-    /* El borde cambia a rojo */
     fill: white;
-    /* El corazón se rellena de rojo */
     animation: latido 0.3s ease-in-out;
 }
 
-
 .like-btn:after .heart-icon {
     fill: white;
-    /* Rellena el corazón al pasar el mouse */
 }
-
 
 .destin-content {
     position: absolute;
@@ -372,19 +358,202 @@ body {
 
 /*---------------------------FOOTER---------------------------*/
 .kizuna-footer {
-  width: 100%;
-  max-width: 1500px;
-  margin: 80px auto 0 auto;
-  box-sizing: border-box;
-  padding: 0 10px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 80px auto 0 auto;
+    box-sizing: border-box;
+    padding: 0 10px;
 }
 
 .footer-contenido p {
-  color: white;                       
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin: 0;
-  text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-align: center;
+}
+
+/* ========================= */
+/* RESPONSIVE TABLET */
+/* ========================= */
+
+@media (max-width: 1024px) {
+
+    body {
+        margin: 10px;
+    }
+
+    .menu_pricipal {
+        gap: 20px;
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .logo h2 {
+        font-size: 26px;
+    }
+
+    .gallery-dest {
+        height: 500px;
+    }
+
+    .titulo-k {
+        font-size: 22px;
+    }
+
+    .sub-k {
+        font-size: 15px;
+    }
+}
+
+/* ========================= */
+/* RESPONSIVE MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .background-tokyo {
+        border-radius: 20px;
+        padding: 16px;
+    }
+
+    .menu_pricipal {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+    }
+
+    .login-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .seccion-encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .encabezado-titulo h2 {
+        font-size: 20px;
+    }
+
+    .ver-todos-btn {
+        font-size: 17px;
+    }
+
+    .gallery-dest {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .destin {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .destin:hover {
+        flex: 1;
+    }
+
+    .titulo-k {
+        font-size: 22px;
+    }
+
+    .sub-k {
+        font-size: 15px;
+    }
+
+    .rating-k {
+        font-size: 16px;
+    }
+
+    .footer-contenido p {
+        font-size: 16px;
+    }
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        margin: 0;
+    }
+
+    .background-tokyo {
+        border-radius: 0;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .encabezado-titulo {
+        gap: 10px;
+    }
+
+    .burbuja-icono {
+        width: 36px;
+        height: 36px;
+    }
+
+    .star-icon-dest {
+        width: 24px;
+        height: 24px;
+    }
+
+    .titulo-k {
+        font-size: 20px;
+    }
+
+    .sub-k {
+        font-size: 14px;
+    }
+
+    .simbolo-pais {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .heart-icon {
+        width: 28px;
+        height: 28px;
+    }
 }

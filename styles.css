@@ -45,11 +45,10 @@ body{
   width: 15px;
   height: 20px;
   z-index: 2;
-  /* Sombra para que resalten sobre el fondo oscuro */
   animation: fall linear infinite;
 }
 
-/* Patrón cíclico: repite cada 10 pétalos para más variedad */
+/* Patrón cíclico */
 .petal:nth-child(10n+1) {
   left: 5%;
   animation-duration: 5s;
@@ -115,8 +114,7 @@ body{
   width: 16px;
 }
 
-
-/* Animación de caída y balanceo */
+/* Animación */
 @keyframes fall {
   0% {
     transform: translateY(0) rotate(0deg) translateX(0);
@@ -129,7 +127,7 @@ body{
   }
 }
 
-/* contenedor del menu */
+/* MENU */
 .menu_pricipal {
   display: flex;
   width: 100%;
@@ -142,13 +140,10 @@ body{
   padding: 1px 40px;
   background: rgba(255, 253, 253, 0.358);
   backdrop-filter: blur(10px);
-   margin-bottom: 60px;
   border-bottom: 1px solid rgba(241, 241, 241, 0.348);
   box-shadow:
     0 4px 20px rgba(241, 241, 241, 0.348);
 }
-
-/* logo del menu */
 
 .logo {
   display: flex;
@@ -168,11 +163,11 @@ body{
   height: auto;
 }
 
-/* palabras del menu */
 .nav-links {
   display: flex;
   gap: 30px;
   list-style: none;
+  padding: 0;
 }
 
 .nav-links a {
@@ -187,7 +182,7 @@ body{
   color: #8c00ff;
 }
 
-/* boton de iniciar sesion */
+/* boton login */
 .login-btn {
   display: flex;
   align-items: center;
@@ -215,15 +210,16 @@ body{
     0 12px 24px rgba(64, 1, 123, 0.738);
 }
 
-/* titulo de la pagina*/
+/* TITULO */
 .titulo{
-  font-size: 78px;
+  font-size: clamp(42px, 7vw, 78px);
   line-height: 1.05;
   font-weight: 800;
   color: #130133;
-  margin:
-    25px 0;
+  margin: 25px 0;
+  max-width: 900px;
 }
+
 .titulo span{
   background: linear-gradient(
     90deg,
@@ -239,14 +235,14 @@ body{
 
 .descrip_2{
   max-width: 520px;
-  font-size: 28px;
+  font-size: clamp(18px, 2.5vw, 28px);
   font-weight: 600;
   line-height: 1.6;
   color: #342b59;
   margin-bottom: 40px;
 }
 
-/* boton de aventura */
+/* botones */
 .aventura-button{
   display: inline-flex;
   align-items: center;
@@ -274,8 +270,9 @@ body{
 .botones{
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
-/* boton de explora */
+
 .explora-btn{
   display: flex;
   align-items: center;
@@ -291,7 +288,7 @@ body{
   border: none;
   cursor: pointer;
   border-radius: 50px;
-  font-size: 22px;
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: 600;
   box-shadow:
     0 10px 25px rgba(180, 174, 199, 0.25);
@@ -304,7 +301,6 @@ body{
     0 15px 30px rgba(123, 77, 255, 0.35);
 }
 
-/* boton de video */
 .video-btn{
   display: flex;
   align-items: center;
@@ -316,7 +312,7 @@ body{
   border: none;
   cursor: pointer;
   border-radius: 50px;
-  font-size: 22px;
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: 600;
   box-shadow:
     0 10px 25px rgba(233, 226, 226, 0.678);
@@ -325,11 +321,12 @@ body{
 
 .video-btn:hover{
   transform: translateY(-3px);
-   box-shadow:
+
+  box-shadow:
     0 10px 25px rgba(238, 247, 248, 0.897);
 }
 
-/*---------------------------FOOTER---------------------------*/
+/* FOOTER */
 .kizuna-footer {
   position: absolute;
   bottom: 20px;
@@ -342,11 +339,150 @@ body{
 }
 
 .footer-contenido p {
-  color: white;                       
+  color: white;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 20px);
   font-weight: 600;
   letter-spacing: 0.5px;
   margin: 0;
   text-align: center;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px){
+
+  .hero-contenedor{
+    padding: 10px 35px;
+  }
+
+  .menu_pricipal{
+    gap: 20px;
+    padding: 15px 25px;
+  }
+
+  .nav-links{
+    gap: 18px;
+  }
+
+  .nav-links a{
+    font-size: 18px;
+  }
+
+  .logo h2{
+    font-size: 26px;
+  }
+
+  .descrip_2{
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px){
+
+  body{
+    margin: 10px;
+  }
+
+  .background-tokyo{
+    border-radius: 20px;
+  }
+
+  .hero-contenedor{
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .menu_pricipal{
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .nav-links{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-links a{
+    font-size: 17px;
+  }
+
+  .logo{
+    width: auto;
+    justify-content: center;
+  }
+
+  .titulo{
+    text-align: center;
+  }
+
+  .descrip_2{
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .botones{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .kizuna-footer{
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 60px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px){
+
+  .hero-contenedor{
+    padding: 15px;
+  }
+
+  .menu_pricipal{
+    border-radius: 20px;
+    padding: 15px;
+  }
+
+  .titulo{
+    line-height: 1.15;
+  }
+
+  .descrip_2{
+    line-height: 1.5;
+  }
+
+  .botones{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .explora-btn,
+  .video-btn,
+  .aventura-button,
+  .login-btn{
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links a{
+    font-size: 16px;
+  }
+
+  .footer-contenido p{
+    line-height: 1.5;
+  }
 }
