@@ -1,0 +1,390 @@
+body {
+    margin: 20px;
+    background: #f5f3f8;
+    overflow-x: hidden;
+}
+
+.hero-contenedor {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+}
+
+/* Contenedor principal */
+.background-tokyo {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    padding: 20px 0;
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.479),
+            rgba(0, 0, 0, 0.507)), url('Fondo_tokio.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* contenedor del menu */
+.menu_pricipal {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    gap: 50px;
+    border-radius: 28px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 40px;
+    background: rgba(255, 253, 253, 0.358);
+    backdrop-filter: blur(10px);
+    margin-bottom: 60px;
+    border-bottom: 1px solid rgba(241, 241, 241, 0.348);
+    box-shadow:
+        0 4px 20px rgba(241, 241, 241, 0.348);
+}
+
+/* logo del menu */
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    gap: 10px;
+    color: #130133;
+    text-decoration: none;
+}
+
+.logo h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    width: auto;
+    height: auto;
+}
+
+/* palabras del menu */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #130133;
+    font-size: 22px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8c00ff;
+}
+
+/* boton de iniciar sesion */
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg,
+            #9333ea,
+            #6209af);
+
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow:
+        0 8px 20px rgba(147, 51, 234, 0.25);
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(64, 1, 123, 0.738);
+}
+
+/* Contenedor principal del encabezado */
+.seccion-encabezado {
+    display: flex;
+    justify-content: space-between;
+    /* Empuja el título a la izquierda y el enlace a la derecha */
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto 24px auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Agrupa la estrella y el texto "Destinos destacados" */
+.encabezado-titulo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* El cuadrado blanco redondeado de la estrella */
+.burbuja-icono {
+    background-color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* La estrella morada interna */
+.star-icon-dest {
+    width: 30px;
+    height: 30px;
+    color: #7b4dff;
+    fill: transparent;
+    transition: fill 0.2s ease;
+}
+
+.burbuja-icono:hover .star-icon-dest {
+    transform: scale(1.1);
+    fill: #7b4dff;
+}
+
+/* Texto del h2 */
+.encabezado-titulo h2 {
+    font-size: 24px;
+    color: #1b1833;
+    margin: 0;
+    font-weight: 750;
+}
+
+/* Botón / Enlace "Ver todos" */
+.ver-todos-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #faf7ff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Icono de la flecha derecha */
+.arrow-icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.2s ease;
+}
+
+.ver-todos-btn:hover {
+    transform: scale(1.1);
+}
+
+.ver-todos-btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/*---------------------------destinos---------------------------*/
+.gallery-dest {
+    display: flex;
+    width: 100%;
+    max-width: 1500px;
+    height: 600px;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.destin {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.d1 {
+    background-image: url('img_observ/kioto.png');
+}
+
+.d2 {
+    background-image: url('img_observ/kamakura.png');
+}
+
+.d3 {
+    background-image: url('img_observ/grindelwald.png');
+}
+
+.d4 {
+    background-image: url('img_observ/cinque_terre.png');
+}
+
+.destin:hover {
+    flex: 4;
+    filter: grayscale(0%);
+}
+
+/* Contenedor superior alineado a los extremos */
+.destin-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    /* Se asegura de flotar sobre el filtro gris */
+}
+
+/* El óvalo blanco de "Japón" */
+.simbolo-pais {
+    background: rgba(255, 255, 255, 0.9);
+    /* Blanco con un toque sutil de transparencia */
+    backdrop-filter: blur(4px);
+    /* Efecto vidrio esmerilado moderno */
+    color: #1a1a1a;
+    /* Texto oscuro para contraste */
+    padding: 8px 16px;
+    border-radius: 50px;
+    /* Esquinas completamente redondeadas en píldora */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* Distancia exacta entre el mapa y el texto */
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.geo-icon {
+    width: 25px;
+    height: 25px;
+    color: #555555;
+}
+
+.like-checkbox {
+    display: none;
+}
+
+.like-btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px;
+}
+
+.heart-icon {
+    width: 35px;
+    /* Tamaño del corazón */
+    height: 35px;
+    color: #f1f4f8;
+    /* Borde gris inicial */
+    fill: transparent;
+    /* Fondo transparente inicial */
+    transition: transform 0.2s ease, fill 0.2s ease, color 0.2s ease;
+}
+
+.like-btn:hover .heart-icon {
+    transform: scale(1.1);
+}
+
+.like-checkbox:checked+.like-btn .heart-icon {
+    color: white;
+    /* El borde cambia a rojo */
+    fill: white;
+    /* El corazón se rellena de rojo */
+    animation: latido 0.3s ease-in-out;
+}
+
+
+.like-btn:after .heart-icon {
+    fill: white;
+    /* Rellena el corazón al pasar el mouse */
+}
+
+
+.destin-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    color: white;
+    font-family: sans-serif;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
+    transition: opacity 0.4s ease;
+}
+
+.titulo-k {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.sub-k {
+    font-size: 17px;
+    margin: 0 0 10px 0;
+    opacity: 0.9;
+}
+
+/* Contenedor Flexbox de la Calificación */
+.rating-k {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+}
+
+.score-k {
+    font-weight: 600;
+}
+
+.votes-k {
+    opacity: 0.7;
+}
+
+/*---------------------------FOOTER---------------------------*/
+.kizuna-footer {
+  width: 100%;
+  max-width: 1500px;
+  margin: 80px auto 0 auto;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.footer-contenido p {
+  color: white;                       
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+}
